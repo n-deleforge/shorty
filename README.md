@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![GitHub license](https://img.shields.io/github/license/n-deleforge/shorty?style=for-the-badge)](https://github.com/n-deleforge/shorty/blob/main/LICENCE)
+[![GitHub license](https://img.shields.io/github/license/n-deleforge/shorty?style=for-the-badge)](https://github.com/n-deleforge/shorty/blob/main/LICENSE)
 ![GitHub last commit](https://img.shields.io/github/last-commit/n-deleforge/shorty?style=for-the-badge)
 [![GitHub forks](https://img.shields.io/github/forks/n-deleforge/shorty?style=for-the-badge)](https://github.com/n-deleforge/shorty/network)
 [![GitHub stars](https://img.shields.io/github/stars/n-deleforge/shorty?style=for-the-badge)](https://github.com/n-deleforge/shorty/stargazers)
