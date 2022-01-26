@@ -41,12 +41,13 @@ if (isset($_GET["a"]) && $_GET["a"] === "r") {
 
     // Check every correlations
     foreach ($redirectionList as $redirection) {
-        $nbErrors++;
-        if (isset($_GET["b"]) && $_GET["b"] == $redirection->getKey()) header("Location: " . $redirection->getUrl());
+        if (isset($_GET["b"]) && $_GET["b"] == $redirection->getKey()) 
+            header("Location: " . $redirection->getUrl());
+        else $nbErrors++;
     };
 
     // No correlations : display error page
-    if ($nbErrors == $nbRedirections) header("Location: ". HOME_URL . "error");
+    if ($nbErrors === $nbRedirections) header("Location: ". HOME_URL . "error");
 }
 
 // Second case : display page
