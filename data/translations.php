@@ -1,10 +1,6 @@
 <?php
-// ======================
-// ============ LANGUAGE
-
 define("LANGUAGE_AVAILABLE", ["english", "french"]);
 
-// English
 $english = [
     "homeError" => "An error has occured, the page you're looking for doesn't exist<br />or the redirection link is incorrect",
     "homeHello" => "Shorty is a free, personal and self-hosted<br />link reduction application.",
@@ -44,7 +40,6 @@ $english = [
     "maxConnection" => "Connection tries"
 ];
 
-// French
 $french = [
     "footer" => "Disponible sur " . LINK_GITHUB . " - v" . APP_VERSION . " © 2021",
     "homeError" => "Il est probable que le lien donné n'est pas correct<br />ou qu'une erreur s'est produite.",

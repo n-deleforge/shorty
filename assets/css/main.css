@@ -114,17 +114,14 @@ header {
     flex-grow: 1;
 }
 
-#topBar a {
-    color: var(--text) !important;
-}
-
-#topBar a:hover {
-    color: var(--hyperlink) !important;
-}
-
 #title {
     font-size: 1.5em;
     font-weight: bolder;
+}
+
+#title,
+#title:hover {
+    color: unset !important;
 }
 
 #logo {
@@ -143,6 +140,14 @@ header {
 #settings i,
 #settings a {
     margin: 0 0.5vh;
+}
+
+#settings a {
+    color: var(--text) !important;
+}
+
+#settings a:hover {
+    color: var(--hyperlink) !important;
 }
 
 @media(max-width:1200px) {

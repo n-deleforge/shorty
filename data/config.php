@@ -1,7 +1,4 @@
 <?php
-// ======================
-// ============ CONSTANT
-
 define("APP_VERSION", "0.1");
 define("PATH_DB", "data/data.sqlite");
 define("PATH_CONTROLLER", "app/controller/");

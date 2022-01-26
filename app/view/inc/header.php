@@ -27,22 +27,21 @@
 
             <div id="settings">
                 <?php
+                // Check if the admin link must be hidden
                 $hideAdmin = SettingManager::findByKey("hideAdmin")->getValue();
 
-                // Public header : only display admin button
-                if (DIRECTORY == "public" && PAGENAME == "home" && $hideAdmin == "0")
-                        echo '<a href="list"><i class="fas fa-user-cog"></i> ' . LANGUAGE["headerAdmin"] . '</a>';
+                // Public links 
+                if (DIRECTORY === "public" && PAGENAME === "home" && $hideAdmin === "0")
+                    echo '<a href="list"><i class="fas fa-user-cog"></i> ' . LANGUAGE["headerAdmin"] . '</a>';
 
-                // Admin header : multiples possibilités
-                 if (DIRECTORY == "admin") {
-                    // Display either add or back (expect on the login page)
+                // Admin links
+                 if (DIRECTORY === "admin") {
+                    // On every page, except the login page
                     if (PAGENAME !== "auth")
-                        if (PAGENAME === "list")
-                            echo '<a class="button floatButton" href="add"><i class="fas fa-plus"></i></a>';
-                        else
-                            echo '<a class="button floatButton" href="list"><i class="fas fa-arrow-left"></i></a>';
+                        // Display either back button or add redirection in the bottom right corner
+                        echo (PAGENAME === "list") ? '<a class="button floatButton" href="add"><i class="fas fa-plus"></i></a>' : '<a class="button floatButton" href="list"><i class="fas fa-arrow-left"></i></a>';
 
-                    // If logged, display every other buttons
+                    // If connected, display all header links
                     if (isset($_SESSION["auth"])) {
                         echo '<a href="settings"><i class="fas fa-toolbox"></i> ' . LANGUAGE["headerSettings"] . '</a>';
                         echo '<a href="password"><i class="fas fa-key"></i> ' . LANGUAGE["headerPassword"] . '</a>';
