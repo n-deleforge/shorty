@@ -8,7 +8,7 @@ spl_autoload_register("loadClass");
 require("data/config.php");
 
 // Installation check
-if (!file_exists(PATH_DB) && file_exists("./install.php")) header("Location: install.php");
+if (!file_exists(PATH_DB)) header("Location: install.php");
 
 // Database connection and load language
 DbConnect::init();
