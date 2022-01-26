@@ -6,7 +6,7 @@
     if (PAGENAME === "auth" || PAGENAME === "settings")
         echo 'deleteInfo();';
     if (PAGENAME === "list")
-        // echo 'deleteInfo(); copyToClipboard(document.querySelectorAll(".clipboard"));';
+        echo 'deleteInfo(); copyToClipboard(document.querySelectorAll(".clipboard"));';
     if (PAGENAME === "add" || PAGENAME === "modify")
         echo 'deleteInfo(); checkRegex();';
     ?>
