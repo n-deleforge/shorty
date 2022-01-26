@@ -89,9 +89,17 @@ a {
     z-index: 5;
     width: 40%;
     position: absolute;
-    top: 20vh;
+    top: 10vh;
     left: 28vw;
     border-radius: 5px;
+}
+
+@media(max-width:1200px) {
+    #info {
+        width: 60%;
+        top: 16vh;
+        left: 16vw;
+    }
 }
 
 /* ======================================== */
@@ -100,6 +108,10 @@ a {
 #topBar,
 header {
     display: flex;
+}
+
+header {
+    flex-grow: 1;
 }
 
 #topBar a {
@@ -124,9 +136,7 @@ header {
 }
 
 #settings {
-    position: absolute;
-    top: 0.5vh;
-    right: 0.5vw;
+    margin: 0.5vh 0.5vw 0 0;
     font-size: 1em;
 }
 
@@ -139,6 +149,24 @@ header {
     #logo {
         width: 4.5vh;
         height: 4.5vh;
+    }
+
+    #topBar {
+        flex-direction: column;
+    }
+
+    #settings {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
+    }
+
+    #settings i {
+        margin: 0 0.3vh;
+    }
+
+    #settings a {
+        margin: 0.5vh;
     }
 }
 
@@ -181,6 +209,20 @@ header {
     color: var(--hyperlink) !important;
 }
 
+@media(max-width:1200px) {
+    .tableTitle {
+        font-size: 1em;
+    }
+
+    .line .case:nth-child(2) {
+        display: none;
+    }
+
+    .case a {
+        margin: 0 1vw;
+    }
+}
+
 /* ======================================== */
 /* ======== BUTTON */
 
@@ -202,6 +244,25 @@ header {
 .button:hover {
     color: var(--button-color2);
     background-color: var(--button-color1);
+}
+
+.floatButton {
+    position: absolute;
+    bottom: 3vh;
+    right: 2vw;
+    border-radius: 50%;
+    min-width: unset !important;
+}
+
+@media(max-width:1200px) {
+    .button {
+        min-width: 80vw;
+    }
+
+    .floatButton {
+        bottom: 6vh;
+        right: 3.5vw;
+    }
 }
 
 /* ======================================== */
@@ -249,6 +310,20 @@ input[type=submit] {
     font-size: 1.1em;
     text-transform: uppercase;
     font-weight: bolder;
+}
+
+@media(max-width:1200px) {
+    label {
+        font-size: 1.2em;
+    }
+
+    input[type=text],
+    input[type=url],
+    input[type=password],
+    input[type=number],
+    select {
+        width: 80vw;
+    }
 }
 
 /* ======================================== */

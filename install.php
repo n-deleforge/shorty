@@ -23,7 +23,7 @@ if (!defined("HOME_URL")) {
     // Opening file and content
     $configFile = fopen("data/config.php", "a+");
     $homeLink = "\n" . 'define("HOME_URL", "' . $defaultURL . '");';
-    
+
     // Generating file
     $success = fwrite($configFile, $homeLink);
     if (!$success) {
@@ -61,8 +61,8 @@ try {
     INSERT INTO setting ('key', 'value') VALUES ('maxConnection', 5);";
     $db->exec($query);
 } catch (Exception $err) {
-        $errors++;
-        array_push($errorsMessage, "Error during generating database file");
+    $errors++;
+    array_push($errorsMessage, "Error during generating database file");
 }
 
 // ==============
@@ -90,7 +90,7 @@ RewriteRule ^([^./]+)$ index.php?a=$1 [L]
 
 // Generating file
 $success = fwrite($htaccessFile, $htaccess);
-if (!$success)  {
+if (!$success) {
     $errors++;
     array_push($errorsMessage, "Error during generating htacess file");
 }
@@ -98,14 +98,36 @@ if (!$success)  {
 // ==========
 // ==== DONE
 
-// If errors : display error messages
-if ($errors !== 0) {
-    foreach($errorsMessage as $message)
-        echo "- " . $message . "<br />";
-}
-
 // If no errors : deleting the install file and redirect to home
-else {
+if ($errors == 0) {
     unlink("install.php");
     header("Location: home");
 }
+
+// If errors : display error messages
+else {
+?>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shorty</title>
+    </head>
+
+    <body>
+
+        <?php
+        foreach ($errorsMessage as $message)
+            echo "- " . $message . "<br />";
+        ?>
+
+    </body>
+    </html>
+
+<?php
+}
+?>

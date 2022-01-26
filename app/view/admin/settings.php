@@ -29,7 +29,6 @@
 ?>
 
 <form class="containerCentered" method="POST">
-
     <div class="formLine">
         <div class="formCase">
             <label for="hideAdmin"><?php echo LANGUAGE["hideAdmin"]; ?></label>

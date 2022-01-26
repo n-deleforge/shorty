@@ -11,17 +11,13 @@ $english = [
     "footer" => "Available on " . LINK_GITHUB . " - v" . APP_VERSION . " © 2021",
 
     "backHome" => "Back to home",
-    "backAdmin" => "Back to admin panel",
-
-    "headerHome" => "App home",
     "headerAdmin" => "Admin panel",
-    "headerAdd" => "Add a redirection",
-    "headerPassword" => "Change password",
     "headerSettings" => "Settings",
+    "headerPassword" => "Change password",
     "headerLogout" => "Logout",
 
     "listActions" => "Actions",
-    "listEmpty" => "There are no redirections. Add one above !",
+    "listEmpty" => "There are no redirections yet.",
     'keyword' => "Keyword",
     "redirection" => "Redirection link",
     "add" => "Add",
@@ -45,7 +41,7 @@ $english = [
     "no" => "No",
     "settingsChanged" => "Parameters updated.",
     "hideAdmin" => "Hide admin pannel",
-    "maxConnection" => "Connection tries",
+    "maxConnection" => "Connection tries"
 ];
 
 // French
@@ -56,17 +52,13 @@ $french = [
     "error404" => "Il semblerait que la page que vous cherchez n'existe pas.",
 
     "backHome" => "Retour à l'accueil",
-    "backAdmin" => "Retour au panneau d'admin.",
-
-    "headerHome" => "Accueil de l'app.",
     "headerAdmin" => "Panneau d'admin.",
-    "headerAdd" => "Ajouter une redirection",
-    "headerPassword" => "Changer de mot de passe",
     "headerSettings" => "Paramètres",
-    "headerLogout" => "Se déconnecter",
+    "headerPassword" => "Changer mot de passe",
+    "headerLogout" => "Déconnexion",
 
     "listActions" => "Actions",
-    "listEmpty" => "Il n'y a pas de redirections. Ajoutez-en une au dessus !",
+    "listEmpty" => "Il n'y a pas de redirections pour le moment.",
     'keyword' => "Mot-clé",
     "redirection" => "Lien de redirection",
     "add" => "Ajouter",
@@ -90,5 +82,5 @@ $french = [
     "no" => "Non",
     "settingsChanged" => "Mise à  jour des paramètres effectuée.",
     "hideAdmin" => "Cacher le panneau d'admin.",
-    "maxConnection" => "Tentatives de connexion",
+    "maxConnection" => "Tentatives de connexion"
 ];
