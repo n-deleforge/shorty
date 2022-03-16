@@ -1,10 +1,11 @@
 <?php
 define("LANGUAGE_AVAILABLE", ["english", "french"]);
+$footer = "V. " . APP_VERSION . " | " . LINK_GITHUB . " | © 2021-22";
 
 $english = [
     "homeError" => "An error has occured, the page you're looking for doesn't exist<br />or the redirection link is incorrect",
     "homeHello" => "Shorty is a free, personal and self-hosted<br />link reduction application.",
-    "footer" => "Available on " . LINK_GITHUB . " - v" . APP_VERSION . " © 2021",
+    "footer" => $footer,
 
     "backHome" => "Back to home",
     "headerAdmin" => "Admin panel",
@@ -41,10 +42,9 @@ $english = [
 ];
 
 $french = [
-    "footer" => "Disponible sur " . LINK_GITHUB . " - v" . APP_VERSION . " © 2021",
     "homeError" => "Il est probable que le lien donné n'est pas correct<br />ou qu'une erreur s'est produite.",
     "homeHello" => "Shorty est une application gratuite, personnelle<br />et auto-hébergée de réduction de lien.",
-    "error404" => "Il semblerait que la page que vous cherchez n'existe pas.",
+    "footer" => $footer,
 
     "backHome" => "Retour à l'accueil",
     "headerAdmin" => "Panneau d'admin.",
