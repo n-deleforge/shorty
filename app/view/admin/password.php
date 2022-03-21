@@ -13,8 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Error
-    else
+    else {
         echo '<p id="info">' . LANGUAGE["passwordDifferent"] . '</p>';
+    }
 }
 ?>
 

@@ -1,7 +1,9 @@
 <?php
 // Number of tries
 $maxConnection = SettingManager::findByKey("maxConnection")->getValue();
-if (!isset($_SESSION["connection"])) $_SESSION["connection"] = 0;
+if (!isset($_SESSION["connection"])) {
+    $_SESSION["connection"] = 0;
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];

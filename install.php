@@ -36,7 +36,10 @@ if (!defined("HOME_URL")) {
 // ==== DATABASE
 
 // Connection to the database
-if (!file_exists(PATH_DB)) new SQLite3(PATH_DB);
+if (!file_exists(PATH_DB)) {
+    new SQLite3(PATH_DB);
+}
+
 require(PATH_MODEL . "DbConnect.Class.php");
 DbConnect::init();
 $db = DbConnect::getDb();

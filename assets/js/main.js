@@ -1,7 +1,6 @@
 /**
  * Delete information message if displayed
  * 
- * @return void
  */
 
 function deleteInfo() {
@@ -15,7 +14,6 @@ function deleteInfo() {
 /**
  * Check every regex of every input with the "needRegex" class
  * 
- * @return void
  */
 
 function checkRegex() {
@@ -35,7 +33,6 @@ function checkRegex() {
  * Copy the data attribute of an element with the "clipboard" class
  * 
  * @param array
- * @return void
  */
 
  function copyToClipboard(array) {

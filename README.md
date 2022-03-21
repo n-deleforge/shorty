@@ -30,5 +30,6 @@ For Apache, a `.htaccess` file is automatically generated at the start of the ap
 
 # Changelog
 
+- 0.2.1 : Some rewritings and some fixes. Minification added.
 - 0.2 : STILL IN BETA. Shorty is now responsive (may be improved later).
 - 0.1 : initial release.

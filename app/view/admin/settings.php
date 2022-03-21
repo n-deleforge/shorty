@@ -20,7 +20,9 @@
 
         // Language
         $newLanguage = htmlspecialchars($_POST['language']);
-        if ($currentLanguage->getValue() !== $newLanguage) header("refresh: 3");
+        if ($currentLanguage->getValue() !== $newLanguage) {
+            header("refresh: 3");
+        }
         $currentLanguage->setValue($newLanguage);
         SettingManager::update($currentLanguage);
 
@@ -51,8 +53,16 @@
             <label for="language"><?php echo LANGUAGE["language"]; ?></label>
             <select id="language" name="language" required>
                 <?php
-                    foreach(LANGUAGE_AVAILABLE as $lang)
-                        echo ($currentLanguage->getValue() == $lang) ? '<option value="' . $lang .'" selected>' . ucFirst($lang) . '</option>' : '<option value="' . $lang .'">' . ucFirst($lang) . '</option>';
+                    foreach(LANGUAGE_AVAILABLE as $lang) {
+                        // Select the current language
+                        if ($currentLanguage->getValue() == $lang) {
+                            echo '<option value="' . $lang .'" selected>' . ucFirst($lang) . '</option>';
+                        }
+                        // List the other languages
+                        else {
+                            '<option value="' . $lang .'">' . ucFirst($lang) . '</option>';
+                        }
+                    }
                 ?>
             </select>
         </div>

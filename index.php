@@ -8,7 +8,9 @@ spl_autoload_register("loadClass");
 require("data/config.php");
 
 // Installation check
-if (!file_exists(PATH_DB)) header("Location: install.php");
+if (!file_exists(PATH_DB)) {
+    header("Location: install.php");
+}
 
 // Database connection and load language
 DbConnect::init();
@@ -39,15 +41,22 @@ if (isset($_GET["a"]) && $_GET["a"] === "r") {
     $redirectionList = RedirectionManager::getList();
     $nbRedirections = count($redirectionList);
 
-    // Check every correlations
     foreach ($redirectionList as $redirection) {
-        if (isset($_GET["b"]) && $_GET["b"] == $redirection->getKey()) 
+        // Either it's correct and the redirection is going on
+        if (isset($_GET["b"]) && $_GET["b"] == $redirection->getKey()) {
             header("Location: " . $redirection->getUrl());
-        else $nbErrors++;
+        }
+
+        // Either the error count increases
+        else {
+            $nbErrors++;
+        }
     };
 
     // No correlations : display error page
-    if ($nbErrors === $nbRedirections) header("Location: ". HOME_URL . "error");
+    if ($nbErrors === $nbRedirections) {
+        header("Location: ". HOME_URL . "error");
+    }
 }
 
 // Second case : display page
@@ -58,7 +67,9 @@ elseif (isset($_GET["a"]) && $_GET["a"] !== "r") {
 }
 
 // Final case : no page loaded
-else loadPage($ROUTES["home"]);
+else {
+    loadPage($ROUTES["home"]);
+}
 
 // =======================
 // ============ FUNCTIONS
@@ -71,8 +82,13 @@ else loadPage($ROUTES["home"]);
 
 function checkAuth() {
     if (DIRECTORY === "admin") {
-        if (PAGENAME === "auth" && isset($_SESSION["auth"])) header("Location: home");
-        if (PAGENAME !== "auth" && !isset($_SESSION["auth"])) header("Location: auth");
+        if (PAGENAME === "auth" && isset($_SESSION["auth"])) {
+            header("Location: home");
+        }
+
+        if (PAGENAME !== "auth" && !isset($_SESSION["auth"])) {
+            header("Location: auth");
+        }
     }
 }
 
@@ -88,12 +104,11 @@ function defineLanguage() {
     $lang = SettingManager::findByKey("language")->getValue();
 
     // Define the used language
-    switch ($lang) {
-        case "french":
-            $arr = $french;
-            break;
-        default:
-            $arr = $english;
+    if ($lang === "french") {
+        $arr = $french;
+    }
+    else {
+        $arr = $english;
     }
 
     define("LANGUAGE", $arr);
@@ -107,8 +122,13 @@ function defineLanguage() {
  */
 
 function loadClass($class) {
-    if (file_exists(PATH_CONTROLLER . $class . ".Class.php")) require PATH_CONTROLLER . $class . ".Class.php";
-    if (file_exists(PATH_MODEL . $class . ".Class.php")) require PATH_MODEL . $class . ".Class.php";
+    if (file_exists(PATH_CONTROLLER . $class . ".Class.php")) {
+        require PATH_CONTROLLER . $class . ".Class.php";
+    }
+
+    if (file_exists(PATH_MODEL . $class . ".Class.php")) {
+        require PATH_MODEL . $class . ".Class.php";
+    }
 }
 
 /**

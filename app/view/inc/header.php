@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shorty</title>
 
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome/all.min.css">
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.min.js"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -31,15 +31,22 @@
                 $hideAdmin = SettingManager::findByKey("hideAdmin")->getValue();
 
                 // Public links 
-                if (DIRECTORY === "public" && PAGENAME === "home" && $hideAdmin === "0")
+                if (DIRECTORY === "public" && PAGENAME === "home" && $hideAdmin === "0") {
                     echo '<a href="list"><i class="fas fa-user-cog"></i> ' . LANGUAGE["headerAdmin"] . '</a>';
+                }
 
                 // Admin links
                  if (DIRECTORY === "admin") {
                     // On every page, except the login page
-                    if (PAGENAME !== "auth")
+                    if (PAGENAME !== "auth") {
                         // Display either back button or add redirection in the bottom right corner
-                        echo (PAGENAME === "list") ? '<a class="button floatButton" href="add"><i class="fas fa-plus"></i></a>' : '<a class="button floatButton" href="list"><i class="fas fa-arrow-left"></i></a>';
+                        if (PAGENAME === "list") {
+                            echo '<a class="button floatButton" href="add"><i class="fas fa-plus"></i></a>';
+                        }
+                        else {
+                            echo '<a class="button floatButton" href="list"><i class="fas fa-arrow-left"></i></a>';
+                        }
+                    }
 
                     // If connected, display all header links
                     if (isset($_SESSION["auth"])) {
