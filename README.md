@@ -8,6 +8,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/n-deleforge/shorty?style=for-the-badge)](https://github.com/n-deleforge/shorty/stargazers)
 [![Paypal](https://img.shields.io/badge/DONATE-PAYPAL.ME-lightgrey?style=for-the-badge)](https://www.paypal.com/paypalme/nicolasdeleforge)
 
+**This is a only a beta and should not be used for a production environnement.**
 </div>
 
 # Features 
